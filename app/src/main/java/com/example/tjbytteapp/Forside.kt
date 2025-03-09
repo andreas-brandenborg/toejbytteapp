@@ -44,6 +44,7 @@ fun Forside () {
 
 
 
+
 @Composable
 fun Background() {
     Box () {
