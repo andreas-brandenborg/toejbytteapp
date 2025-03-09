@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -26,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -38,7 +40,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TøjbytteAppTheme {
-                Forside()
+                MainScreen()
                 }
             }
         }
@@ -67,11 +69,11 @@ fun Navigation() {
 
 @Composable
 fun Swipe(postTitle: String, description: String) {
-    Box (){
+    Box (modifier = Modifier.fillMaxWidth()){
         Image(painter = painterResource(id = R.drawable.shoes),
             contentDescription = "Shoes",
             modifier = Modifier
-                .size(800.dp))
+                .size(820.dp))
         Box(
             modifier = Modifier
                 .matchParentSize()
@@ -96,6 +98,8 @@ fun Swipe(postTitle: String, description: String) {
                     fontSize = 18.sp,
                     color = Color.White
                 )
+                Spacer(modifier = Modifier.padding(10.dp))
+
                 Row(
                     horizontalArrangement = Arrangement.SpaceBetween,
                     modifier = Modifier
