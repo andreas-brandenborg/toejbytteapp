@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TøjbytteAppTheme {
-                MainScreen()
+                Forside()
                 }
             }
         }
